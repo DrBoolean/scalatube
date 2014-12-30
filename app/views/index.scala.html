@@ -1,0 +1,10 @@
+@(videos: Seq[Video])
+
+@main("Youtubes!") {
+  <ul> 
+    @videos.map { video =>
+      <li>@video.title</li>
+      <iframe width="320" height="240" src="//www.youtube.com/embed/@Video.getId(video)" frameborder="0" allowfullscreen></iframe>
+      } 
+  </ul>
+}
