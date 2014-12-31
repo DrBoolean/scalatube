@@ -30,5 +30,7 @@ object Feed {
 
 object YoutubeResp {
   implicit val youtubeFormat : Format[YoutubeResp] = Json.format[YoutubeResp]
+
+  def entries(x:Option[YoutubeResp]): Seq[Video] = x.map(_.feed.entry).getOrElse(List(Video("nope", "0")))
 }
 
