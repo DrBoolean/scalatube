@@ -1,4 +1,4 @@
-name := """traitified forward"""
+name := """traitiforward"""
 
 version := "1.0-SNAPSHOT"
 
