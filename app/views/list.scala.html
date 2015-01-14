@@ -1,0 +1,13 @@
+@(assess: Seq[Assessment])
+
+@main("Assessments") {
+  <table> 
+    @assess.map { ass =>
+      <tr>
+        <td>@ass.aid</td>
+        <td>@ass.name</td>
+        <td>@ass.email</td>
+      </tr>
+      } 
+  </table>
+}

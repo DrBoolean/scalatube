@@ -1,10 +1,9 @@
-@(videos: Seq[Video])
+@(form: Form[Tuple2[String, String]])
 
-@main("Youtubes!") {
-  <ul> 
-    @videos.map { video =>
-      <li>@video.title</li>
-      <iframe width="320" height="240" src="//www.youtube.com/embed/@Video.getId(video)" frameborder="0" allowfullscreen></iframe>
-      } 
-  </ul>
+@main("Forward n' Traitify") {
+  @helper.form(action = routes.Assessments.create) {
+    @helper.inputText(form("name"))
+    @helper.inputText(form("email"))
+    <input type="submit"/>
+  }
 }

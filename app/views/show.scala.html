@@ -1,0 +1,16 @@
+@(a_id: String)
+
+
+@main("Assessments") {
+  <div class="assessment"></div>
+
+  <script>
+    Traitify.setPublicKey("nabmltf65250ba8k04j04sfbjq");
+    Traitify.setHost("https://api-sandbox.traitify.com");
+    Traitify.setVersion("v1");
+    var assessmentId = '@a_id';
+    var t = Traitify.ui.load(assessmentId, ".assessment")
+    Traitify.onInitialize(function(){ console.log("INITTED", arguments) });
+    t.onFinished(function(){ console.log("FINISHED", arguments) });
+  </script>
+}
