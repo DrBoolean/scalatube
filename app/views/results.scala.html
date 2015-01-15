@@ -1,0 +1,5 @@
+@(results: Seq[(String, String, String)])
+Name,Email,Desc<br/>
+@results.map { res =>
+@res._1,@res._2,@res._3<br/>
+}

@@ -1,9 +1,47 @@
 @(form: Form[Tuple2[String, String]])
 
 @main("Forward n' Traitify") {
-  @helper.form(action = routes.Assessments.create) {
-    @helper.inputText(form("name"))
-    @helper.inputText(form("email"))
-    <input type="submit"/>
-  }
+  <div id="intro" class="introSection container-fluid">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <img class="logoImg u-center u-marginTop50px" src="http://forwardjs.com/img/forward2-logo.png" alt="">
+      </div>
+      <div class="col-xs-12 text-center introText">
+        <h1 class="title">FORWARD 2</h1>
+        <div class="tagline">Traitify Assessment</div>
+          <div class="madePossible">Brought to you by:
+          <a href="http://traitify.com"><img src="http://forwardjs.com/img/traitify.png" alt="Traitify"></a></div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- end #intro -->
+
+
+    <div class="container">
+      <div class="row" style="position:fixed;top:55px;z-index:99999;width:90%;margin:0 auto;">
+        <div class="col-xs-6 col-lg-9">
+          <div class="alert alert-warning">
+              @form.errors.map { e =>
+                <div class="message">@e.key ain't valid</div>
+              }
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="wrap">
+            @helper.form(action = routes.Assessments.create, 'class -> "login") {
+              <div id="name_field">
+                <input type="text" placeholder="name (required)" name="name" value=""/>
+              </div>
+              <div id="email_field">
+                <input type="text" id="email" name="email" placeholder="email" />
+              </div>
+              <input type="submit" value="Get Started!" class="subscribeBtn btn btn-success btn-sm" />
+            }
+          </div>
+        </div>
+      </div>
+    </div>
 }

@@ -2,6 +2,7 @@ GET      /                           controllers.Assessments.index
 GET      /test                       controllers.Assessments.show
 GET      /assessments                controllers.Assessments.list
 GET      /results                    controllers.Assessments.results
+GET      /done                       controllers.Assessments.done
 POST     /assessments                controllers.Assessments.create
 
 # Map static resources from the /public folder to the /assets URL path

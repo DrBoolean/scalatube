@@ -28,7 +28,13 @@ object Assessment {
     }
   }
 
-  def create(assessment: Assessment): Unit = {
+  def findByEmail(email: String): Option[Assessment] = {
+    DB.withConnection { implicit connection =>
+      SQL("select * from assessments WHERE email = {email}").on('email -> email).as(Assessment.simple *).headOption
+    }
+  }
+
+  def create(assessment: Assessment): String = {
     DB.withConnection { implicit connection =>
       SQL("insert into assessments(aid, name, email) values ({aid}, {name}, {email})").on(
         'aid -> assessment.aid,
@@ -36,6 +42,6 @@ object Assessment {
         'name -> assessment.name
       ).executeUpdate()
     }
+    assessment.aid
   }
-
 }

@@ -1,0 +1,121 @@
+body
+{
+  padding: 0;
+  margin: 0;
+
+  background: url('http://forwardjs.com/img/fullBg.jpg') fixed;
+  background-size: cover;
+}
+
+.madePossible img {
+  width: 7%;
+  min-width: 100px;
+  height: auto;
+}
+
+.wrap
+{
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+form
+{
+  width: 250px;
+  margin: 0 auto;
+}
+
+form.login input[type='text'],
+form.login input[type='password']
+{
+  width: 100%;
+  padding: 5px 0;
+  margin: 0;
+  margin-bottom: 1em;
+
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 1px;
+  color: #000;
+
+  border: 0;
+  border-bottom: 1px solid #000;
+  outline: 0;
+  outline: 0;
+  background: 0;
+}
+
+form.login input[type='submit']
+{
+  width: 100%;
+  margin-top: 1em;
+
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  outline: 0;
+
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+  color: #444;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #444;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #444;
+}
+
+:-ms-input-placeholder {
+  color: #444;
+}
+
+form.login input[type='submit']:hover
+{
+  transition: background-color .5s ease;
+}
+
+form.login .remember-forgot
+{
+  float: left;
+
+  width: 100%;
+  margin: 10px 0 0 0;
+}
+form.login .forgot-pass-content
+{
+  min-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+form.login label,
+form.login a
+{
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+}
+
+form.login a
+{
+  transition: color .5s ease;
+}
+
+form.login a:hover
+{
+  color: #2ecc71;
+}

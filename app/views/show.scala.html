@@ -3,14 +3,15 @@
 
 @main("Assessments") {
   <div class="assessment"></div>
+  <div class="clear"></div>
+  <a href="/done" class="pull-right subscribeBtn btn btn-success btn-sm" type="button">New Assessment</a>
+
 
   <script>
     Traitify.setPublicKey("nabmltf65250ba8k04j04sfbjq");
     Traitify.setHost("https://api-sandbox.traitify.com");
     Traitify.setVersion("v1");
     var assessmentId = '@a_id';
-    var t = Traitify.ui.load(assessmentId, ".assessment")
-    Traitify.onInitialize(function(){ console.log("INITTED", arguments) });
-    t.onFinished(function(){ console.log("FINISHED", arguments) });
+    Traitify.ui.load(assessmentId, ".assessment")
   </script>
 }
